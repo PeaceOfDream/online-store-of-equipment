@@ -1,9 +1,16 @@
-import { Admin } from "./page/Admin"
-import { Auth } from "./page/Auth";
-import { Basket } from "./page/Basket";
-import { DevicePage } from "./page/DevicePage";
-import { Shop } from "./page/Shop";
-import { ADMIN_ROUTE, BASKET_ROUTE, DEVICE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from "./utils/consts"
+import { Admin } from './page/Admin';
+import { Auth } from './page/Auth';
+import { Basket } from './page/Basket';
+import { DevicePage } from './page/DevicePage';
+import { Shop } from './page/Shop';
+import {
+  ADMIN_ROUTE,
+  BASKET_ROUTE,
+  DEVICE_ROUTE,
+  LOGIN_ROUTE,
+  REGISTRATION_ROUTE,
+  SHOP_ROUTE,
+} from './utils/consts';
 
 export const authRoutes = [
   {
