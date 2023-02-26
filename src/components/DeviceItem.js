@@ -1,18 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Card, Col, Image } from 'react-bootstrap';
 import star from '../assets/star.png';
 import { useNavigate } from 'react-router-dom';
 import { DEVICE_ROUTE } from '../utils/consts';
+import { Context } from '..';
 
-export const DeviceItem = ({ device }) => {
-	const navigate = useNavigate();
-	console.log(navigate);
+export const DeviceItem = ({ device, brandName }) => {
+  const navigate = useNavigate();
+
   return (
-    <Col md={3} className={'mt-3'} onClick={() => navigate(DEVICE_ROUTE + '/' + device.id)}>
-      <Card style={{ width: 150, cursor: 'pointer' }} border={'light'}>
-        <Image width={150} height={150} src={device.ing} />
+    <Col
+      md={3}
+      className={'mt-3'}
+      onClick={() => navigate(DEVICE_ROUTE + '/' + device.id)}
+    >
+      <Card
+        style={{ width: 150, cursor: 'pointer' }}
+        border={'light'}
+      >
+        <Image
+          width={150}
+          height={150}
+          style={{
+            objectFit: 'contain',
+          }}
+          src={process.env.REACT_APP_API_URL + device.img}
+        />
         <div className="text-black-50 d-flex justify-content-between align-items-center">
-          <div >Sams</div>
+          <div>{brandName}</div>
           <div className="mt-1 d-flex align-items-center">
             <div>{device.rating}</div>
             <Image width={18} height={18} src={star} />
